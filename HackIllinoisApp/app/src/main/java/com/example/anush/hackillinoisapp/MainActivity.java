@@ -19,33 +19,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Acquire a reference to the system Location Manager
-        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
-// Define a listener that responds to location updates
-        LocationListener locationListener = new LocationListener() {
-            public void onLocationChanged(Location location) {
-
-            }
-
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-            }
-
-            public void onProviderEnabled(String provider) {
-            }
-
-            public void onProviderDisabled(String provider) {
-            }
-        };
-
-
-        Context context = getApplicationContext();
-        setMute(context);
-        setRinger(context);
 
     }
 
+    public void mute(View v) {
+        Context context = getApplicationContext();
+        setMute(context);
+    }
 
+    public void ringer(View v) {
+        Context context = getApplicationContext();
+        setRinger(context);
+    }
 
     public void setMute(Context context) {
         AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
