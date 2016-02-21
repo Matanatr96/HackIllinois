@@ -21,8 +21,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Locale;
 
@@ -127,8 +131,8 @@ public class GpsActivity extends Activity implements View.OnClickListener, andro
 
 
                 showLocation.setText("City Name: " + cityName + "\n" + longitude + "\n" + latitude);
-                LocationHolderActivity loc = new LocationHolderActivity();
-                loc.add(location);
+                LocationHolderActivity.getInstance().add(location);
+                readFileInEditor(location);
                 progress.setVisibility(View.GONE);
             }
         }
@@ -167,5 +171,28 @@ public class GpsActivity extends Activity implements View.OnClickListener, andro
 
     public void viewLocations(View v) {
         startActivity(new Intent(this, LocationHolderActivity.class));
+    }
+
+    public void readFileInEditor(Location location) {
+        try {
+            InputStream in = openFileInput(location.toString());
+            if (in != null) {
+                InputStreamReader tmp=new InputStreamReader(in);
+                BufferedReader reader=new BufferedReader(tmp);
+                String str;
+                StringBuilder buf=new StringBuilder();
+                while ((str = reader.readLine()) != null) {
+                    buf.append(str+"n");
+                }
+                in.close();
+
+            }
+        }
+        catch (java.io.FileNotFoundException e) {
+
+        }
+        catch (Throwable t) {
+            Toast.makeText(this, "Exception: "+t.toString(), Toast.LENGTH_LONG).show();
+        }
     }
 }

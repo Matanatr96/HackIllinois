@@ -11,12 +11,13 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LocationHolderActivity extends AppCompatActivity {
 
-    ArrayList<Location> locationHolder;
+    public static ArrayList<Location> locationHolder;
     private ListView lv;
     private TextView tv;
 
@@ -26,6 +27,11 @@ public class LocationHolderActivity extends AppCompatActivity {
 
     public void add(Location location) {
         locationHolder.add(location);
+    }
+
+    public static ArrayList getInstance() {
+        if(locationHolder == null) locationHolder = new ArrayList<>();
+        return locationHolder;
     }
 
 
