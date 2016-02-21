@@ -13,7 +13,9 @@
         android:id="@+id/listView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="153dp" />
+        android:layout_marginTop="153dp"
+        android:clickable="true"
+        android:visibility="visible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,4 +25,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit this location"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:onClick="descriptiveView"/>
 </RelativeLayout>

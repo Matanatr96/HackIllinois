@@ -28,6 +28,10 @@
             android:name=".LocationHolderActivity"
             android:label="@string/title_activity_location_holder" >
         </activity>
+        <activity
+            android:name=".DescriptiveViewActivity"
+            android:label="@string/title_activity_descriptive_view" >
+        </activity>
     </application>
 
 </manifest>
