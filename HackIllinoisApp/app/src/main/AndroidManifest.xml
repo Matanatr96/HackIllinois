@@ -3,6 +3,7 @@
     package="com.example.anush.hackillinoisapp" >
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -18,6 +19,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".GpsActivity"
+            android:label="@string/title_activity_gps" >
+        </activity>
+        <activity
+            android:name=".LocationHolderActivity"
+            android:label="@string/title_activity_location_holder" >
         </activity>
     </application>
 

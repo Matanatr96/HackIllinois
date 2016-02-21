@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+    <TextView android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:text="My Location is:"
+        android:textSize="25sp"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <EditText android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="0.24"
+        android:lines="5"
+        android:id="@+id/txtShowLoc">
+
+    </EditText>
+    <LinearLayout android:id="@+id/linearLayout2"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center">
+        <ProgressBar android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/progressBar">
+
+        </ProgressBar>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Get Current Location"
+            android:id="@+id/btnGetLoc">
+
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Previous Locations"
+            android:id="@+id/button3"
+            android:onClick="viewLocations"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.example.anush.hackillinoisapp;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -19,9 +20,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
+
+
+
+
+
+    public void testGps(View v) {
+        startActivity(new Intent(this, GpsActivity.class));
+    }
+
 
     public void mute(View v) {
         Context context = getApplicationContext();
